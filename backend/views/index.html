@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App - Fun Friday Group</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="header-left">
+                <button class="back-btn">←</button>
+                <div class="group-info">
+                    <div class="group-avatar">
+                        <img src="/images/group-avatar.png" alt="Group" id="groupAvatar">
+                    </div>
+                    <div class="group-details">
+                        <h3 class="group-name" id="groupName">Fun Friday Group</h3>
+                        <p class="group-status" id="groupStatus">5 participants</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="header-btn" id="videoCallBtn">📹</button>
+                <button class="header-btn" id="menuBtn">⋮</button>
+            </div>
+        </div>
+
+        <!-- Anonymous Mode Toggle -->
+        <div class="anonymous-toggle">
+            <span class="toggle-text">Anonymously Chat group_With_Anonymous ON</span>
+        </div>
+
+        <!-- Messages Container -->
+        <div class="messages-container" id="messagesContainer">
+            <!-- Messages will be loaded here -->
+        </div>
+
+        <!-- Status Message -->
+        <div class="status-message">
+            <span>Now you're appearing as Anonymous!</span>
+        </div>
+
+        <!-- Message Input -->
+        <div class="message-input-container">
+            <div class="input-wrapper">
+                <input type="text" id="messageInput" placeholder="Type a message ..." maxlength="1000">
+                <button class="attach-btn" id="attachBtn">📎</button>
+                <button class="camera-btn" id="cameraBtn">📷</button>
+            </div>
+            <button class="send-btn" id="sendBtn">
+                <span>▶</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-content">
+            <h2>Join Chat</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required id="emailInput">
+                <input type="password" placeholder="Password" required id="passwordInput">
+                <button type="submit">Login</button>
+            </form>
+            <p>or</p>
+            <form id="registerForm">
+                <input type="text" placeholder="Username" required id="usernameInput">
+                <input type="email" placeholder="Email" required id="regEmailInput">
+                <input type="password" placeholder="Password" required id="regPasswordInput">
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/socket.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
